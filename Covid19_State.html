@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Link to Bootstrap JS and Popper.js (required for Bootstrap features) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+
+</head>
+
+<body>
+    <script>
+        async function Covid() {
+            var url = "https://data.covid19india.org/data.json";
+            var data = await (await fetch(url)).json();
+            var state = data["statewise"];
+            var x = data["statewise"]["deltaconfirmed"];
+            document.write("Total State : " + data["statewise"].length);
+            document.write("<table style='background-color:#E0FFFF' border=3 width=100%> <tr><th> State</th><th>Confirmed</th><th>Recovered</th>")
+
+            for (i in state) {
+
+                document.write("<tr><td>" + state[i].state +
+                    "</td><td>" + state[i].confirmed + "<span  style='color:red;'> " + state[i].deltaconfirmed + "↑ 😷</span></td>" +
+                    "</td><td>" + state[i].recovered + " <span  style='color:green;'>" + state[i].deltarecovered + "↓ 👏 </span></td>");
+            }
+            document.write("</tabel>");
+        }
+        Covid();
+    </script>
+</body>
+
+</html>
