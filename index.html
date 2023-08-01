@@ -9,6 +9,42 @@
     <!-- Link to Bootstrap JS and Popper.js (required for Bootstrap features) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+      <style>
+        /* Default styles for form and table */
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        form div {
+            margin-bottom: 15px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+        }
+
+        /* Responsive styles for mobile */
+        @media (max-width: 600px) {
+            form div {
+                display: block;
+            }
+        }
+
+        @media (max-width: 400px) {
+            table {
+                overflow-x: auto;
+            }
+        }
+    </style>
+
 
 </head>
 
